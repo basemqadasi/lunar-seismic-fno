@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build/output
+build/
+dist/
+*.egg-info/
+
+# Large/restricted artifacts
+*.npz
+*.mseed
+*.pt
+*.pth
+*.ckpt
+paper_results/
+inference/
+detection_results*/
+
+# OS
+.DS_Store

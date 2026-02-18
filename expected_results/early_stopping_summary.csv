@@ -1,0 +1,9 @@
+modality,seed,early_stop_epoch,source_notebook,source_cell
+waveform,42,159,/home/g202210640/wrk/MQ/new_work/wav_results/FNO_MQ_waveform_v02.ipynb,33
+waveform,7,176,/home/g202210640/wrk/MQ/new_work/wav_results/FNO_MQ_waveform_v02.ipynb,33
+waveform,101,127,/home/g202210640/wrk/MQ/new_work/wav_results/FNO_MQ_waveform_v02.ipynb,33
+waveform,2025,135,/home/g202210640/wrk/MQ/new_work/wav_results/FNO_MQ_waveform_v02.ipynb,33
+spectrogram,42,61,/home/g202210640/wrk/MQ/new_work/spec_results/FNO_MQ_spectrogram_v02.ipynb,31
+spectrogram,7,84,/home/g202210640/wrk/MQ/new_work/spec_results/FNO_MQ_spectrogram_v02.ipynb,31
+spectrogram,101,71,/home/g202210640/wrk/MQ/new_work/spec_results/FNO_MQ_spectrogram_v02.ipynb,31
+spectrogram,2025,108,/home/g202210640/wrk/MQ/new_work/spec_results/FNO_MQ_spectrogram_v02.ipynb,31

@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "lunar-seismic-fno"
+message: "If you use this code, please cite the associated paper."
+type: software
+authors:
+  - family-names: "Author"
+    given-names: "Primary"
+repository-code: "https://github.com/<your-org-or-user>/lunar-seismic-fno"
+license: "MIT"
+version: "0.1.0"
+date-released: "2026-02-18"

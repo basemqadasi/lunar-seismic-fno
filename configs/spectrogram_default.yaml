@@ -1,0 +1,27 @@
+seed_list: [42, 7, 101, 2025]
+
+training:
+  num_epochs: 1500
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  patience: 20
+  scheduler_factor: 0.8
+  scheduler_patience: 10
+  split_seed: 1234
+
+model:
+  modes1: 2
+  modes2: 2
+  width: 64
+
+paths:
+  eq_npz: /home/g202210640/wrk/MQ/new_work/train_test_data/EQ_event_noise_data_globalnorm8.npz
+  mq_npz: /home/g202210640/wrk/MQ/new_work/train_test_data/MQ_TPTN_plusFPFN_k4.npz
+  x_key: spectrogram_data
+  y_key: spectrogram_labels
+  output_dir: ./outputs/spectrogram
+
+runtime:
+  device: cuda
+  num_workers: 0
