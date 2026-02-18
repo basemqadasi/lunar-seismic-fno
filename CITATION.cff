@@ -3,9 +3,9 @@ title: "lunar-seismic-fno"
 message: "If you use this code, please cite the associated paper."
 type: software
 authors:
-  - family-names: "Author"
-    given-names: "Primary"
-repository-code: "https://github.com/<your-org-or-user>/lunar-seismic-fno"
+  - family-names: "Qadasi"
+    given-names: "Basem"
+repository-code: "https://github.com/baqadasi/lunar-seismic-fno"
 license: "MIT"
 version: "0.1.0"
 date-released: "2026-02-18"
