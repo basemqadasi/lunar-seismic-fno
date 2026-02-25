@@ -27,17 +27,17 @@ Figshare record:
 
 Expected NPZ files:
 
-- `combined_EQ8_MQ64.npz`
-- `EQ_event_noise_data_globalnorm8.npz`
-- `MQ_TPTN_plusFPFN_k4.npz`
+- `Combined_EQ_MQ64_data.npz`
+- `EQ_event_noise_data_.npz`
+- `PSE_MQ_test_data.npz`
 
 Example layout:
 
 ```text
 /home/you/data/lunar_fno/
-  combined_EQ8_MQ64.npz
-  EQ_event_noise_data_globalnorm8.npz
-  MQ_TPTN_plusFPFN_k4.npz
+  Combined_EQ_MQ64_data.npz
+  EQ_event_noise_data_.npz
+  PSE_MQ_test_data.npz
 ```
 
 Then update dataset paths in:
@@ -48,11 +48,11 @@ Then update dataset paths in:
 Minimum path updates:
 
 - waveform config:
-  - `paths.eq_npz -> .../combined_EQ8_MQ64.npz`
-  - `paths.mq_npz -> .../MQ_TPTN_plusFPFN_k4.npz`
+  - `paths.eq_npz -> .../Combined_EQ_MQ64_data.npz`
+  - `paths.mq_npz -> .../PSE_MQ_test_data.npz`
 - spectrogram config:
-  - `paths.eq_npz -> .../EQ_event_noise_data_globalnorm8.npz`
-  - `paths.mq_npz -> .../MQ_TPTN_plusFPFN_k4.npz`
+  - `paths.eq_npz -> .../EQ_event_noise_data_.npz`
+  - `paths.mq_npz -> .../PSE_MQ_test_data.npz`
 
 Data key and shape requirements are documented in `docs/data_contract.md`.
 
