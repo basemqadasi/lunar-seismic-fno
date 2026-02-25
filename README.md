@@ -1,6 +1,6 @@
 # lunar-seismic-fno
-
-Code for two seismic event detection pipelines built with Fourier Neural Operators (FNO):
+## Fourier Neural Operator for Moonquake Detection
+Code for two Moonquake event detection pipelines built with Fourier Neural Operators (FNO):
 
 - 1D FNO on waveform windows
 - 2D FNO on spectrogram patches
@@ -27,10 +27,7 @@ pip install -e .
 
 ## Data handling
 
-Keep the NPZ files on Figshare and download them locally before training.
-Do not commit dataset files to Git.
-
-Figshare record:
+NPZ files for training and validation data set can be downloaded from Figshare record:
 
 - <https://doi.org/10.6084/m9.figshare.30209080.v1>
 
