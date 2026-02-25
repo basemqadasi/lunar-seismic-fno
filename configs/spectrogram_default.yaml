@@ -17,6 +17,7 @@ model:
 
 paths:
   eq_npz: /home/g202210640/wrk/MQ/new_work/train_test_data/EQ_event_noise_data_.npz
+  eq_mq_npz: /home/g202210640/wrk/MQ/new_work/train_test_data/Combined_EQ_MQ64_data.npz
   mq_npz: /home/g202210640/wrk/MQ/new_work/train_test_data/PSE_MQ_test_data.npz
   x_key: spectrogram_data
   y_key: spectrogram_labels
