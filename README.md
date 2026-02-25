@@ -36,15 +36,10 @@ Figshare record:
 
 Required files:
 
-- `combined_EQ8_MQ64.npz` (waveform EQ data)
-- `EQ_event_noise_data_globalnorm8.npz` (spectrogram EQ data)
-- `MQ_TPTN_plusFPFN_k4.npz` (MQ data used by both pipelines)
+- `Combined_EQ_MQ64_data.npz` (waveform EQ data)
+- `EQ_event_noise_data_.npz` (spectrogram EQ data)
+- `PSE_MQ_test_data.npz` (MQ data used by both pipelines)
 
-Why this is the better option for your case:
-
-- your dataset bundle is large (~0.6 GB),
-- Git history gets bloated if large binaries are versioned directly,
-- Figshare gives stable hosting, DOI support, and easier citation for paper artifacts.
 
 After download, point config paths to your local files:
 
