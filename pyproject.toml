@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "lunar-seismic-fno"
 version = "0.1.0"
-description = "Companion code for waveform and spectrogram FNO seismic detection"
+description = "Fourier Neural Operator for Moonquake Detection"
 requires-python = ">=3.9"
 dependencies = [
   "numpy>=1.24",
