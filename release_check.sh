@@ -101,30 +101,14 @@ run_check "Python syntax compile" "python -m py_compile \\$(find src -name '*.py
 run_check "Waveform CLI help" "MKL_THREADING_LAYER=GNU OMP_NUM_THREADS=1 PYTHONPATH=src python -m lunar_fno.train.train_waveform --help"
 run_check "Spectrogram CLI help" "MKL_THREADING_LAYER=GNU OMP_NUM_THREADS=1 PYTHONPATH=src python -m lunar_fno.train.train_spectrogram --help"
 
-# 5) Expected-results checks
-for f in expected_results/waveform_seed_metrics.csv expected_results/spectrogram_seed_metrics.csv expected_results/early_stopping_summary.csv; do
+# 5) Docs checks
+for f in docs/data_contract.md docs/reproducibility.md docs/project_structure.md; do
   if [[ -f "$f" ]]; then
-    pass "Expected results file exists: $f"
+    pass "Documentation file exists: $f"
   else
-    fail "Missing expected results file: $f"
+    fail "Missing documentation file: $f"
   fi
 done
-
-run_check "Expected results seed set == {42,7,101,2025}" "python - <<'PY'
-import pandas as pd
-files = [
-  'expected_results/waveform_seed_metrics.csv',
-  'expected_results/spectrogram_seed_metrics.csv',
-  'expected_results/early_stopping_summary.csv',
-]
-expected = {42,7,101,2025}
-for f in files:
-    df = pd.read_csv(f)
-    seeds = set(int(x) for x in df['seed'].unique())
-    if seeds != expected:
-        raise SystemExit(f'{f}: seeds {sorted(seeds)} != {sorted(expected)}')
-print('seed check ok')
-PY"
 
 # 6) Data leakage checks
 if git ls-files | rg -n '\\.(npz|mseed|pth|pt|ckpt)$' >/tmp/release_check_tracked_large.out; then

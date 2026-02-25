@@ -1,9 +1,0 @@
-modality,dataset,seed,accuracy,precision,recall,f1_score,source_notebook,source_cell
-waveform,EQ,42,0.991453,0.983607,1.000000,0.991736,/home/g202210640/wrk/MQ/new_work/wav_results/FNO_MQ_waveform_v02.ipynb,33
-waveform,EQ,7,0.991453,0.983607,1.000000,0.991736,/home/g202210640/wrk/MQ/new_work/wav_results/FNO_MQ_waveform_v02.ipynb,33
-waveform,EQ,101,0.982906,0.983333,0.983333,0.983333,/home/g202210640/wrk/MQ/new_work/wav_results/FNO_MQ_waveform_v02.ipynb,33
-waveform,EQ,2025,0.982906,0.983333,0.983333,0.983333,/home/g202210640/wrk/MQ/new_work/wav_results/FNO_MQ_waveform_v02.ipynb,33
-waveform,MQ,42,0.931361,0.890411,0.995624,0.940083,/home/g202210640/wrk/MQ/new_work/wav_results/FNO_MQ_waveform_v02.ipynb,33
-waveform,MQ,7,0.944379,0.910000,0.995624,0.950888,/home/g202210640/wrk/MQ/new_work/wav_results/FNO_MQ_waveform_v02.ipynb,33
-waveform,MQ,101,0.940828,0.904573,0.995624,0.947917,/home/g202210640/wrk/MQ/new_work/wav_results/FNO_MQ_waveform_v02.ipynb,33
-waveform,MQ,2025,0.921893,0.876686,0.995624,0.932377,/home/g202210640/wrk/MQ/new_work/wav_results/FNO_MQ_waveform_v02.ipynb,33

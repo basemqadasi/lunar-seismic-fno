@@ -1,24 +1,22 @@
 # lunar-seismic-fno
 
-Companion code for Moonquake/Earthquake detection with Fourier Neural Operators (FNO), including:
+Code for two seismic event detection pipelines built with Fourier Neural Operators (FNO):
 
-- 1D-FNO waveform-based detection
-- 2D-FNO spectrogram-based detection
+- 1D FNO on waveform windows
+- 2D FNO on spectrogram patches
 
-This repository is organized for reproducibility of the paper experiments while excluding restricted datasets and large model artifacts.
+The repository is designed for reproducible training and evaluation, while keeping data and model artifacts out of version control.
 
-## Repository Layout
+## What is included
 
-- `src/lunar_fno/models/fno1d.py`: 1D-FNO model used for waveform detection.
-- `src/lunar_fno/models/fno2d.py`: 2D-FNO model used for spectrogram detection.
-- `src/lunar_fno/train/train_waveform.py`: multi-seed waveform training/evaluation entrypoint.
-- `src/lunar_fno/train/train_spectrogram.py`: multi-seed spectrogram training/evaluation entrypoint.
-- `configs/`: default YAML configs.
-- `docs/data_contract.md`: required NPZ keys and array shapes.
-- `docs/reproducibility.md`: run commands and expected metrics.
-- `expected_results/`: frozen seed-wise reference metrics from source notebooks.
+- `src/lunar_fno/models/`: 1D and 2D FNO classifier definitions.
+- `src/lunar_fno/data/`: dataset adapters for waveform and spectrogram NPZ files.
+- `src/lunar_fno/train/`: training entrypoints for each modality.
+- `configs/`: YAML configs for training, model, runtime, and paths.
+- `docs/data_contract.md`: required NPZ keys and accepted shapes.
+- `docs/reproducibility.md`: end-to-end run steps and reproducibility notes.
 
-## Install
+## Installation
 
 ```bash
 python -m venv .venv
@@ -27,42 +25,77 @@ pip install -U pip
 pip install -e .
 ```
 
-## Run
+## Data handling
 
-Waveform (1D-FNO):
+Keep the NPZ files on Figshare and download them locally before training.
+Do not commit dataset files to Git.
+
+Figshare record:
+
+- <https://doi.org/10.6084/m9.figshare.30209080.v1>
+
+Required files:
+
+- `combined_EQ8_MQ64.npz` (waveform EQ data)
+- `EQ_event_noise_data_globalnorm8.npz` (spectrogram EQ data)
+- `MQ_TPTN_plusFPFN_k4.npz` (MQ data used by both pipelines)
+
+Why this is the better option for your case:
+
+- your dataset bundle is large (~0.6 GB),
+- Git history gets bloated if large binaries are versioned directly,
+- Figshare gives stable hosting, DOI support, and easier citation for paper artifacts.
+
+After download, point config paths to your local files:
+
+- `configs/waveform_default.yaml`
+- `configs/spectrogram_default.yaml`
+
+## Run training
+
+Waveform model:
 
 ```bash
 python -m lunar_fno.train.train_waveform --config configs/waveform_default.yaml
 ```
 
-Spectrogram (2D-FNO):
+Spectrogram model:
 
 ```bash
 python -m lunar_fno.train.train_spectrogram --config configs/spectrogram_default.yaml
 ```
 
-## Outputs
+You can also use the helper scripts:
 
-Each training script writes under `output_dir` from its config:
+```bash
+bash scripts/run_waveform.sh
+bash scripts/run_spectrogram.sh
+```
+
+## Output files
+
+Each run writes to `paths.output_dir` in the selected config.
+For each seed, the scripts save:
 
 - `models/best_model_seed{seed}.pth`
 - `models/final_model_seed{seed}.pth`
-- `metrics_eq.csv`
-- `metrics_mq.csv`
 - `training_history_seed{seed}.csv`
 
-## Data Policy
+And per modality:
 
-This repository does not include datasets (`.npz`, `.mseed`) or checkpoint files.
-See `docs/data_contract.md` for required keys/shapes and path conventions.
+- `metrics_eq.csv`
+- `metrics_mq.csv`
+- `early_stopping.csv`
+- ROC and confusion matrix figures under `EQ_results/` and `MQ_results/`
 
-## Source Notebook Mapping
+## Practical checklist
 
-Waveform source pipeline:
-- `/home/g202210640/wrk/MQ/new_work/wav_results/FNO_MQ_waveform_v02.ipynb` (cell 33)
-
-Spectrogram source pipeline:
-- `/home/g202210640/wrk/MQ/new_work/spec_results/FNO_MQ_spectrogram_v02.ipynb` (cell 31)
+1. Create and activate `.venv`.
+2. Install package with `pip install -e .`.
+3. Download NPZ files from Figshare.
+4. Update `paths.eq_npz` and `paths.mq_npz` in config YAML.
+5. Run waveform and/or spectrogram training command.
+6. Check `output_dir` for metrics CSVs and saved models.
 
 ## Citation
 
@@ -70,4 +103,4 @@ See `CITATION.cff`.
 
 ## License
 
-MIT License (`LICENSE`).
+MIT (`LICENSE`).

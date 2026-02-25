@@ -1,56 +1,66 @@
 # Data Contract
 
-This repository expects NPZ files with explicit keys for each modality.
+This project reads NPZ files for waveform and spectrogram pipelines.
+Use the keys and shapes below.
 
-## Waveform (1D-FNO)
+## Waveform pipeline (1D FNO)
 
 Required keys:
 
 - `waveform_data`
 - `waveform_labels`
 
-Accepted waveform_data shapes (before canonicalization):
+Accepted `waveform_data` shapes:
 
 - `(N, L)`
 - `(N, L, 1)`
 - `(N, L, 1, 1)`
 
-Canonical internal shape:
+Internal handling:
 
-- `(N, L)` in memory, then dataset returns tensors shaped `(L, 1)`.
+- data is canonicalized and fed as waveform sequences,
+- labels are binary with shape `(N,)` and values in `{0, 1}`.
 
-Labels:
-
-- binary labels in `{0,1}` with shape `(N,)`.
-
-## Spectrogram (2D-FNO)
+## Spectrogram pipeline (2D FNO)
 
 Required keys:
 
 - `spectrogram_data`
 - `spectrogram_labels`
 
-Accepted spectrogram_data shapes:
+Accepted `spectrogram_data` shapes:
 
 - `(N, H, W)`
 - `(N, H, W, 1)`
 
-Canonical internal shape:
+Internal handling:
 
-- `(N, H, W, 1)`.
+- spectrogram arrays are canonicalized to `(N, H, W, 1)`,
+- labels are binary with shape `(N,)` and values in `{0, 1}`.
 
-Labels:
+## Config path fields
 
-- binary labels in `{0,1}` with shape `(N,)`.
+Set file locations in YAML configs under:
 
-## Path Map (default configs)
+- `paths.eq_npz`
+- `paths.mq_npz`
 
-Waveform config uses:
+And make sure key names match:
 
-- EQ: `/home/g202210640/wrk/MQ/new_work/train_test_data/combined_EQ8_MQ64.npz`
-- MQ: `/home/g202210640/wrk/MQ/new_work/train_test_data/MQ_TPTN_plusFPFN_k4.npz`
+- `paths.x_key`
+- `paths.y_key`
 
-Spectrogram config uses:
+## Recommended data workflow
 
-- EQ: `/home/g202210640/wrk/MQ/new_work/train_test_data/EQ_event_noise_data_globalnorm8.npz`
-- MQ: `/home/g202210640/wrk/MQ/new_work/train_test_data/MQ_TPTN_plusFPFN_k4.npz`
+Keep datasets in Figshare (or another data repository) and download locally.
+Do not track NPZ files in Git history.
+
+Figshare record used for this project:
+
+- <https://doi.org/10.6084/m9.figshare.30209080.v1>
+
+Required NPZ filenames:
+
+- `combined_EQ8_MQ64.npz`
+- `EQ_event_noise_data_globalnorm8.npz`
+- `MQ_TPTN_plusFPFN_k4.npz`

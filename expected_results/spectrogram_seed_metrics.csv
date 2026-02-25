@@ -1,9 +1,0 @@
-modality,dataset,seed,accuracy,precision,recall,f1_score,source_notebook,source_cell
-spectrogram,EQ,42,1.000000,1.000000,1.000000,1.000000,/home/g202210640/wrk/MQ/new_work/spec_results/FNO_MQ_spectrogram_v02.ipynb,31
-spectrogram,EQ,7,1.000000,1.000000,1.000000,1.000000,/home/g202210640/wrk/MQ/new_work/spec_results/FNO_MQ_spectrogram_v02.ipynb,31
-spectrogram,EQ,101,1.000000,1.000000,1.000000,1.000000,/home/g202210640/wrk/MQ/new_work/spec_results/FNO_MQ_spectrogram_v02.ipynb,31
-spectrogram,EQ,2025,1.000000,1.000000,1.000000,1.000000,/home/g202210640/wrk/MQ/new_work/spec_results/FNO_MQ_spectrogram_v02.ipynb,31
-spectrogram,MQ,42,0.865089,0.801406,0.997812,0.888889,/home/g202210640/wrk/MQ/new_work/spec_results/FNO_MQ_spectrogram_v02.ipynb,31
-spectrogram,MQ,7,0.887574,0.836431,0.984683,0.904523,/home/g202210640/wrk/MQ/new_work/spec_results/FNO_MQ_spectrogram_v02.ipynb,31
-spectrogram,MQ,101,0.928994,0.886940,0.995624,0.938144,/home/g202210640/wrk/MQ/new_work/spec_results/FNO_MQ_spectrogram_v02.ipynb,31
-spectrogram,MQ,2025,0.923077,0.890438,0.978118,0.932221,/home/g202210640/wrk/MQ/new_work/spec_results/FNO_MQ_spectrogram_v02.ipynb,31
