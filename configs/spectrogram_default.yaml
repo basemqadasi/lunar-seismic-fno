@@ -16,8 +16,8 @@ model:
   width: 64
 
 paths:
-  eq_npz: /home/g202210640/wrk/MQ/new_work/train_test_data/EQ_event_noise_data_globalnorm8.npz
-  mq_npz: /home/g202210640/wrk/MQ/new_work/train_test_data/MQ_TPTN_plusFPFN_k4.npz
+  eq_npz: /home/g202210640/wrk/MQ/new_work/train_test_data/EQ_event_noise_data_.npz
+  mq_npz: /home/g202210640/wrk/MQ/new_work/train_test_data/PSE_MQ_test_data.npz
   x_key: spectrogram_data
   y_key: spectrogram_labels
   output_dir: ./outputs/spectrogram
