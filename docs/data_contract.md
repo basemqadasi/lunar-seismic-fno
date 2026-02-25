@@ -61,6 +61,6 @@ Figshare record used for this project:
 
 Required NPZ filenames:
 
-- `combined_EQ8_MQ64.npz`
-- `EQ_event_noise_data_globalnorm8.npz`
-- `MQ_TPTN_plusFPFN_k4.npz`
+- `Combined_EQ_MQ64_data.npz`
+- `EQ_event_noise_data_.npz`
+- `PSE_MQ_test_data.npz`
