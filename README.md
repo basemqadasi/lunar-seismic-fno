@@ -6,7 +6,7 @@
 
 
 
-This code for two Moonquake event detection pipelines built with Fourier Neural Operators (FNO):
+## This code for two Moonquake event detection pipelines built with Fourier Neural Operators (FNO):
 
 - 1D FNO on waveform windows
 - 2D FNO on spectrogram patches
