@@ -27,6 +27,13 @@ The code is organized for reproducible training and evaluation while keeping dat
 ## Abstract
 Moonquake detection is difficult because lunar seismic records are sparse, noisy, and collected under acquisition settings that differ from standard terrestrial data. This repository studies whether Fourier Neural Operators can serve as lightweight, resolution-invariant detectors for that setting. The paper evaluates both waveform-based and spectrogram-based FNO classifiers trained under limited-label conditions, including a cross-domain regime that mixes earthquake data with a small labeled moonquake set. On independent lunar test records, the 1D and 2D models reach F1-scores of 0.96 and 0.99, respectively. Compared with conventional CNN-style baselines discussed in the paper, the FNO models are intended to use fewer parameters, less training data, and less computation while preserving strong generalization across variable input lengths and sampling rates.
 
+<p align="center">
+  <img src="docs/figs/fig2_moon.svg" alt="Moonquake detection overview and representative results" width="900" />
+</p>
+<p align="center">
+  <em>Figure 1. Moonquake detection overview and representative results from the paper.</em>
+</p>
+
 ## Reference
 Al-Qadasi, B., & Waheed, U. B. (2026). *Fourier Neural Operator for Moonquake Detection*. *Earth and Space Science*, 13(3). https://doi.org/10.1029/2025EA004792
 
@@ -107,6 +114,13 @@ Accepted array shapes and the data contract are documented in `docs/data_contrac
 
 ## Model and repository structure
 This repository contains two FNO-based classifiers:
+
+<p align="center">
+  <img src="docs/figs/model_arch.svg" alt="Waveform and spectrogram FNO model architecture" width="900" />
+</p>
+<p align="center">
+  <em>Figure 2. Model architecture used for waveform and spectrogram FNO-based moonquake detection.</em>
+</p>
 
 - `src/lunar_fno/models/fno1d.py`: 1D FNO classifier for waveform sequences
 - `src/lunar_fno/models/fno2d.py`: 2D FNO classifier for spectrogram inputs
