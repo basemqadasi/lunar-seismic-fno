@@ -6,7 +6,6 @@
 <div align="center">
   <sup>1</sup> Department of Geosciences, King Fahd University of Petroleum and Minerals, Dhahran, Saudi Arabia
 </div>
->>>>>>> 1389231 (Improve README)
 
 <div align="center">
   <a href="https://github.com/basemqadasi/lunar-seismic-fno"><img src="https://img.shields.io/github/stars/basemqadasi/lunar-seismic-fno" alt="GitHub Stars" /></a>
