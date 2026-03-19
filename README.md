@@ -31,7 +31,7 @@ Studying Moonquakes provides significant insight into the internal structure of 
   <img src="docs/figs/fig2_moon.svg" alt="Moonquake detection overview and representative results" width="900" />
 </p>
 <p align="center">
-  <em>Figure 1. Moonquake detection overview and representative results from the paper.</em>
+  <em>Figure 1. The Apollo mission PSE seismic stations (A-15—A-16), and the inset represents the Apollo-17 LSPE geophone array geometry. The background is a composite image of the moon using Clementine data from 1994, Credit goes to NASA. The locations of the Apollo five stations are taken from Wagner et al. (2017); Haase et al. (2019); Onodera (2024). The geometry of the LSPE geophone array is adapted from Haase et al. (2019)..</em>
 </p>
 
 ## Reference
